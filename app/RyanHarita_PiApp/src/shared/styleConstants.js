@@ -1,0 +1,1 @@
+export const MAIN_COLOR = '#073B59'; // Example main color
