@@ -5,12 +5,12 @@ import Button from "../components/navigation/ui/buttons/Button";
 import { LIGHT_BG_COLOR, MAIN_COLOR } from "../shared/constants/styleConstants";
 import { useState } from "react";
 
-const AuthScreen = () => {
+const AuthScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: LIGHT_BG_COLOR }}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -45,6 +45,7 @@ const AuthScreen = () => {
             <Button
               onPress={() => {
                 console.log("entrar kkkkkkk");
+                navigation.navigate("Main");
               }}
             >
               Entrar
