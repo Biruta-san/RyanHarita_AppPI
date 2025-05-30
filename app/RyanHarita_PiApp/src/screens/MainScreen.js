@@ -1,21 +1,21 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
-import { Text } from "react-native-paper";
-import { SafeAreaView } from "react-native-safe-area-context";
 import AlunoScreen from "./main/AlunoScreen";
 import ProjetoScreen from "./main/ProjetoScreen";
+import NavigationBar from "../components/navigation/NavigationBar";
 
 const Drawer = createDrawerNavigator();
 
-const MainScreen = ({}) => {
+const MainScreen = () => {
   return (
-    <SafeAreaView>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Aluno" component={AlunoScreen} />
-        <Drawer.Screen name="Projeto" component={ProjetoScreen} />
-      </Drawer.Navigator>
-      <Text>Main</Text>
-    </SafeAreaView>
+    <Drawer.Navigator
+      screenOptions={{
+        header: (props) => <NavigationBar {...props} />,
+      }}
+      initialRouteName="Projeto"
+    >
+      <Drawer.Screen name="Projeto" component={ProjetoScreen} />
+      <Drawer.Screen name="Aluno" component={AlunoScreen} />
+    </Drawer.Navigator>
   );
 };
 

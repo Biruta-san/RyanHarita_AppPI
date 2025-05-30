@@ -22,7 +22,11 @@ export default function App() {
             name="Auth"
             component={AuthScreen}
           />
-          <Stack.Screen name="Main" component={MainScreen} />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Main"
+            component={MainScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

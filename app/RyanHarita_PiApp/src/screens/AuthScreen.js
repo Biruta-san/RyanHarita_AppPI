@@ -2,7 +2,11 @@ import { KeyboardAvoidingView, Platform, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextInput from "../components/navigation/ui/inputs/TextInput";
 import Button from "../components/navigation/ui/buttons/Button";
-import { LIGHT_BG_COLOR, MAIN_COLOR } from "../shared/constants/styleConstants";
+import {
+  LIGHT_BG_COLOR,
+  LIGHT_TEXT_COLOR,
+  MAIN_COLOR,
+} from "../shared/constants/styleConstants";
 import { useState } from "react";
 
 const AuthScreen = ({ navigation }) => {
@@ -10,9 +14,9 @@ const AuthScreen = ({ navigation }) => {
   const [senha, setSenha] = useState("");
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: LIGHT_BG_COLOR }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAvoidingView
-        style={{ flex: 1 }}
+        style={{ flex: 1, backgroundColor: LIGHT_TEXT_COLOR }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
       >
